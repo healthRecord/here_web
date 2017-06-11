@@ -1,0 +1,35 @@
+<ion-split-pane>
+    <!--  our side menu  -->
+    <ion-menu [content]="content">
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>Doctor Portal</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-item>
+                    <ion-avatar item-left>
+                        <img src="assets/icon.png" />
+                    </ion-avatar>
+                    <h2>Dr . Eric Kwong</h2>
+                </ion-item>
+                <button ion-item (click)="setCategory('qrCode')">
+                    <ion-icon item-left name="qr-scanner"></ion-icon>
+                    <h2>QR Code</h2>
+                </button>
+                <button ion-item (click)="setCategory('record')">
+                    <ion-icon item-left name="log-out"></ion-icon>
+                    <h2>Health Record</h2>
+                </button>
+                <button ion-item (click)="setCategory('qrCode')">
+                    <ion-icon item-left name="log-out"></ion-icon>
+                    <h2>Logout</h2>
+                </button>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+
+    <!-- the main content -->
+    <ion-nav [root]="rootPage" main #content></ion-nav>
+</ion-split-pane>
